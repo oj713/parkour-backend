@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "name": "parkour-middle-tier",
+  "version": "1.0.0",
+  "description": "Middle Tier for Parkour WebApp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bernie Sander",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3"
+  }
+}
