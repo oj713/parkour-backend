@@ -20,7 +20,7 @@ export const updateUser = (id, user) =>
     usersModel.updateOne({ _id: id }, { $set: user });
 
 export const deleteUser = (id) => 
-    usersModel.deleteMany({_id: id});
+    usersModel.deleteOne({_id: id});
 
 export const deleteAllUsers = () =>
     usersModel.deleteMany({});
