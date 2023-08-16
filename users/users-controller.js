@@ -6,6 +6,7 @@ const UserController = (app) => {
   app.post('/api/users', createUser);
   app.delete('/api/users/:uid', deleteUser);
   app.put('/api/users/:uid', updateUser);
+  app.put('/api/reset', resetUsers);
 }
 
 const createUser = async (req, res) => {
@@ -55,5 +56,11 @@ const findAllUsers = async (req, res) => {
     res.json(users);
   }
 };
+
+const resetUsers = async (req, res) => {
+  const status = await usersDao.deleteAllUsers();
+  const status2 = await usersDao.addStarterUsers();
+  res.sendStatus(200);
+}
 
 export default UserController

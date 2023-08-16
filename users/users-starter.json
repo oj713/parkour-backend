@@ -1,0 +1,40 @@
+[{
+    "username": "grandteton",
+    "password": "123",
+    "displayName": "Grand Teton",
+    "profileimage": "https://jacksonholewildlifesafaris.com/wp-content/uploads/2021/06/2880x1620-featured-image-grand-tetons-scaled.jpg",
+    "profileBio": "Northwestern Wyoming park with peaks, forests, lakes & wildlife, plus a ski resort & lodges.",
+    "role": "Park",
+    "followers": [],
+    "following": []
+},
+{
+    "username": "hiker",
+    "password": "123",
+    "displayName": "Hiker Name",
+    "profileimage": "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3360859.jpg",
+    "profileBio": "Just a normal hiker.",
+    "role": "Hiker",
+    "followers": [],
+    "following": []
+},
+{
+    "username": "yosemiteRanger",
+    "password": "123",
+    "displayName": "Ranger Name",
+    "profileimage": "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3360859.jpg",
+    "profileBio": "Just a normal ranger.",
+    "role": "Ranger",
+    "followers": [],
+    "following": []
+},
+{
+    "username": "yosemite",
+    "password": "123",
+    "displayName": "Yosemite",
+    "profileimage": "https://cdn.aarp.net/content/dam/aarp/travel/destinations/2020/09/1140-yosemite-hero.imgcache.rev.web.1044.600.jpg",
+    "profileBio": "California park with valleys, waterfalls, sequoias, hiking trails & more.",
+    "role": "Park",
+    "followers": [],
+    "following": []
+}]
