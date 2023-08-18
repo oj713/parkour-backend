@@ -1,5 +1,5 @@
 import postsModel from "./posts-model.js";
-import postsStarter from './posts-starter.json' assert {type: 'json'}
+import postsStarter from './posts-starter.js'
 
 export const findAllPosts = () =>
     postsModel.find();
@@ -8,7 +8,10 @@ export const findPostById = (id) =>
     postsModel.findById(id);
 
 export const findPostsByParkId = (parkId) =>
-    postsModel.find({ parkId })
+    postsModel.find({ parkId: parkId })
+
+export const findPostsByUserId = (userId) =>
+    postsModel.find({ userId: userId})
 
 export const createPost = (post) =>
     postsModel.create(post);

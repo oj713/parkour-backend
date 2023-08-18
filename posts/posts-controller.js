@@ -6,7 +6,7 @@ const PostsController = (app) => {
     app.post('/api/posts', createPost);
     app.delete('/api/posts/:uid', deletePost);
     app.put('/api/posts/:uid', updatePost);
-    app.put('/api/reset', resetPosts);
+    app.get('/api/postsreset', resetPosts);
 }
 
 const createPost = async (req, res) => {
