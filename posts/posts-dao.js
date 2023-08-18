@@ -7,6 +7,9 @@ export const findAllPosts = () =>
 export const findPostById = (id) =>
     postsModel.findById(id);
 
+export const findPostsByParkId = (parkId) =>
+    postsModel.find({ parkId })
+
 export const createPost = (post) =>
     postsModel.create(post);
 

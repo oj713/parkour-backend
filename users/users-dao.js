@@ -13,6 +13,12 @@ export const findUserByUsername = (username) =>
 export const findUserByCredentials = (username, password) =>
     usersModel.findOne({ username, password });
 
+export const findUsersByRangerStation = (rangerStation) =>
+    usersModel.find({ rangerStation });
+
+export const findUserByDisplayName = (displayName) =>
+    usersModel.find({ displayName });
+
 export const createUser = (user) =>
     usersModel.create(user);
 
@@ -23,7 +29,7 @@ export const deleteUser = (id) =>
     usersModel.deleteOne({_id: id});
 
 export const deleteAllUsers = () =>
-    usersModel.deleteMany({});
+    usersModel.deleteOne({_id: "64dee148d6f487396367c762"})
 
 export const addStarterUsers = () => 
     usersModel.insertMany(usersStarter);

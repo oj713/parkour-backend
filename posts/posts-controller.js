@@ -34,9 +34,14 @@ const findPostById = async (req, res) => {
 };
 
 const findAllPosts = async (req, res) => {
-    // add filtering by poster / park later
-    const posts = await postsDao.findAllPosts();
-    res.json(posts);
+    const parkId = req.params.parkId;
+    if (parkId) {
+      const posts = await postsDao.findPostsByParkId(parkId);
+      req.json(posts);
+    } else {
+      const posts = await postsDao.findAllPosts();
+      res.json(posts);
+    }
 };
 
 const resetPosts = async (req, res) => {

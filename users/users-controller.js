@@ -6,7 +6,7 @@ const UserController = (app) => {
   app.post('/api/users', createUser);
   app.delete('/api/users/:uid', deleteUser);
   app.put('/api/users/:uid', updateUser);
-  app.put('/api/reset', resetUsers);
+  app.get('/api/usersreset', resetUsers);
 }
 
 const createUser = async (req, res) => {
@@ -37,6 +37,8 @@ const findUserById = async (req, res) => {
 const findAllUsers = async (req, res) => {
   const username = req.query.username;
   const password = req.query.password;
+  const rangerStation = req.query.rangerStation;
+  const displayName = req.query.displayName;
   if (username && password) {
     const user = await usersDao.findUserByCredentials(username, password);
     if (user) {
@@ -48,6 +50,22 @@ const findAllUsers = async (req, res) => {
     const user = await usersDao.findUserByUsername(username);
     if (user) {
       res.json(user);
+    } else {
+      res.sendStatus(404);
+    }
+  }
+  else if (displayName) {
+    const user = await usersDao.findUserByDisplayName(displayName);
+    if (user) {
+      res.json(user);
+    } else {
+      res.sendStatus(404);
+    }
+  }
+  else if (rangerStation) {
+    const users = await usersDao.findUsersByRangerStation(rangerStation);
+    if (users) {
+      res.json(users);
     } else {
       res.sendStatus(404);
     }

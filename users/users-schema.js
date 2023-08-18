@@ -8,10 +8,10 @@ const usersSchema = new mongoose.Schema({
   profileBio: String,
   role: {
     type: String,
-    enum: ['Hiker', 'Ranger', 'Park'],
-    default: 'Hiker'
+    enum: ['hiker', 'ranger', 'park'],
+    default: 'hiker'
   },
-  rangerstation: {
+  rangerStation: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'users'
   },
