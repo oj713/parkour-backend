@@ -2,15 +2,15 @@ import * as postsDao from './posts-dao.js';
 
 const PostsController = (app) => {
     app.get('/api/posts', findAllPosts)
-    app.get('/api/posts/:uid', findPostById);
+    app.get('/api/posts/:id', findPostById);
     app.post('/api/posts', createPost);
-    app.delete('/api/posts/:uid', deletePost);
-    app.put('/api/posts/:uid', updatePost);
+    app.delete('/api/posts/:id', deletePost);
+    app.put('/api/posts/:id', updatePost);
     app.get('/api/postsreset', resetPosts);
 }
 
 const createPost = async (req, res) => {
-  const newUser = await postsDao.createPost(req.body);
+  const newPost = await postsDao.createPost(req.body);
   res.json(newPost);
 };
 

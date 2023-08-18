@@ -7,6 +7,9 @@ export const findAllUsers = () =>
 export const findUserById = (id) =>
     usersModel.findById(id);
 
+export const findUserHeaderById = (id) => 
+    usersModel.findById(id, {displayName: 1, profileImage: 1, username: 1, role: 1, rangerStation: 1})
+
 export const findUserByUsername = (username) =>
     usersModel.findOne({ username });
 
