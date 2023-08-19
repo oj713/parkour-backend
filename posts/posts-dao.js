@@ -1,5 +1,6 @@
 import postsModel from "./posts-model.js";
 import postsStarter from './posts-starter.js'
+import {ObjectId} from 'mongodb'
 
 export const findAllPosts = () =>
     postsModel.find();
@@ -8,7 +9,7 @@ export const findPostById = (id) =>
     postsModel.findById(id);
 
 export const findPostsByParkId = (parkId) =>
-    postsModel.find({ parkId: parkId })
+    postsModel.find({ parkId: parkId})
 
 export const findPostsByUserId = (userId) =>
     postsModel.find({ userId: userId})

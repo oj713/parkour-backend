@@ -34,14 +34,14 @@ const findPostById = async (req, res) => {
 };
 
 const findAllPosts = async (req, res) => {
-    const parkId = req.params.parkId;
-    const userId = req.params.userId;
+    const parkId = req.query.parkId;
+    const userId = req.query.userId;
     if (parkId) {
       const posts = await postsDao.findPostsByParkId(parkId);
-      req.json(posts);
+      res.json(posts);
     } else if (userId) {
       const posts = await postsDao.findPostsByUserId(userId);
-      req.json(posts);
+      res.json(posts);
     } else {
       const posts = await postsDao.findAllPosts();
       res.json(posts);
