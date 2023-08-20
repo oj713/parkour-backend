@@ -14,6 +14,6 @@ const postsSchema = new mongoose.Schema({
     location: String,
     attachment: String,
     likes: [{type: mongoose.Schema.Types.ObjectId, ref: 'users'}], // list of ids of users who liked this post
-    likedByPark: Boolean
+    likedByPark: {type: Boolean, default: false}
 }, { collection: "posts" });
 export default postsSchema;

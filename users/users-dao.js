@@ -36,3 +36,6 @@ export const deleteAllUsers = () =>
 
 export const addStarterUsers = () => 
     usersModel.insertMany(usersStarter);
+
+export const findParksHeaders = () => 
+    usersModel.find({role: 'park'}, {displayName: 1, profileImage: 1, username: 1})

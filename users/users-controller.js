@@ -8,6 +8,7 @@ const UserController = (app) => {
   app.delete('/api/users/:id', deleteUser);
   app.put('/api/users/:id', updateUser);
   app.get('/api/usersreset', resetUsers);
+  app.get('/api/parksheaders', findParksHeaders);
 }
 
 const createUser = async (req, res) => {
@@ -61,6 +62,7 @@ const findAllUsers = async (req, res) => {
       res.sendStatus(404);
     }
   }
+
   else if (displayName) {
     const user = await usersDao.findUserByDisplayName(displayName);
     if (user) {
@@ -69,6 +71,7 @@ const findAllUsers = async (req, res) => {
       res.sendStatus(404);
     }
   }
+
   else if (rangerStation) {
     const users = await usersDao.findUsersByRangerStation(rangerStation);
     if (users) {
@@ -86,6 +89,11 @@ const resetUsers = async (req, res) => {
   const status = await usersDao.deleteAllUsers();
   const status2 = await usersDao.addStarterUsers();
   res.sendStatus(200);
+}
+
+const findParksHeaders = async (req, res) => {
+  const parks = await usersDao.findParksHeaders();
+  res.json(parks);
 }
 
 export default UserController
