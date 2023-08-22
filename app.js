@@ -6,6 +6,9 @@ import mongoose from "mongoose";
 import UsersController from "./users/users-controller.js";
 import PostsController from "./posts/posts-controller.js";
 import AuthController from "./users/auth-controller.js";
+import ParksController from "./users/parks/parks-controller.js";
+import HikersController from "./users/hikers/hikers-controller.js";
+import RangersController from "./users/rangers/rangers-controller.js";
 const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING
 mongoose.connect(DB_CONNECTION_STRING)
 
@@ -34,4 +37,7 @@ app.use(express.json());
 UsersController(app);
 PostsController(app);
 AuthController(app);
+ParksController(app);
+HikersController(app);
+RangersController(app);
 app.listen(process.env.PORT || 4000);

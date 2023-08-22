@@ -1,41 +1,10 @@
-import usersModel from "./users-model.js";
-import usersStarter from './users-starter.js'
+import parksModel from './parks/parks-model.js';
+import hikersModel from './hikers/hikers-model.js';
+import rangersModel from './rangers/rangers-model.js';
 
-export const findAllUsers = () =>
-    usersModel.find();
-
-export const findUserById = (id) =>
-    usersModel.findById(id);
-
-export const findUserHeaderById = (id) => 
-    usersModel.findById(id, {displayName: 1, profileImage: 1, username: 1, role: 1, rangerStation: 1})
-
-export const findUserByUsername = (username) =>
-    usersModel.findOne({ username });
-
-export const findUserByCredentials = (username, password) =>
-    usersModel.findOne({ username, password });
-
-export const findUsersByRangerStation = (rangerStation) =>
-    usersModel.find({ rangerStation });
-
-export const findUserByDisplayName = (displayName) =>
-    usersModel.find({ displayName });
-
-export const createUser = (user) =>
-    usersModel.create(user);
-
-export const updateUser = (id, user) =>
-    usersModel.updateOne({ _id: id }, { $set: user });
-
-export const deleteUser = (id) => 
-    usersModel.deleteOne({_id: id});
-
-export const deleteAllUsers = () =>
-    usersModel.deleteMany({})
-
-export const addStarterUsers = () => 
-    usersModel.insertMany(usersStarter);
-
-export const findParksHeaders = () => 
-    usersModel.find({role: 'park'}, {displayName: 1, profileImage: 1, username: 1})
+export const findAllUsers = () => {
+    const parks =  parksModel.find();
+    const hikers = hikersModel.find();
+    const rangers = rangersModel.find();
+    return [...parks, ...hikers, ...rangers];
+}

@@ -2,98 +2,11 @@ import * as usersDao from './users-dao.js';
 
 const UserController = (app) => {
   app.get('/api/users', findAllUsers)
-  app.get('/api/users/:id', findUserById);
-  app.get('/api/users/header/:id', findUserHeaderById);
-  app.post('/api/users', createUser);
-  app.delete('/api/users/:id', deleteUser);
-  app.put('/api/users/:id', updateUser);
-  app.get('/api/usersreset', resetUsers);
-  app.get('/api/parksheaders', findParksHeaders);
-}
-
-const createUser = async (req, res) => {
-  const newUser = await usersDao.createUser(req.body);
-  res.json(newUser);
-};
-
-const deleteUser = async (req, res) => {
-  const id = req.params.id;
-  const status = await usersDao.deleteUser(id);
-  res.json(status);
-};
-
-const updateUser = async (req, res) => {
-  const id = req.params.id;
-  const status = await usersDao.updateUser(id, req.body);
-  const user = await usersDao.findUserById(id);
-  req.session["currentUser"] = user;
-  res.json(status);
-};
-
-const findUserById = async (req, res) => {
-  const id = req.params.id;
-  const user = await usersDao.findUserById(id);
-  res.json(user);
-};
-
-const findUserHeaderById = async (req, res) => {
-  const id = req.params.id;
-  const userHeader = await usersDao.findUserHeaderById(id);
-  res.json(userHeader);
 }
 
 const findAllUsers = async (req, res) => {
-  const username = req.query.username;
-  const password = req.query.password;
-  const rangerStation = req.query.rangerStation;
-  const displayName = req.query.displayName;
-  if (username && password) {
-    const user = await usersDao.findUserByCredentials(username, password);
-    if (user) {
-      res.json(user);
-    } else {
-      res.sendStatus(404);
-    }
-  } else if (username) {
-    const user = await usersDao.findUserByUsername(username);
-    if (user) {
-      res.json(user);
-    } else {
-      res.sendStatus(404);
-    }
-  }
-
-  else if (displayName) {
-    const user = await usersDao.findUserByDisplayName(displayName);
-    if (user) {
-      res.json(user);
-    } else {
-      res.sendStatus(404);
-    }
-  }
-
-  else if (rangerStation) {
-    const users = await usersDao.findUsersByRangerStation(rangerStation);
-    if (users) {
-      res.json(users);
-    } else {
-      res.sendStatus(404);
-    }
-  } else {
     const users = await usersDao.findAllUsers();
     res.json(users);
-  }
 };
-
-const resetUsers = async (req, res) => {
-  const status = await usersDao.deleteAllUsers();
-  const status2 = await usersDao.addStarterUsers();
-  res.sendStatus(200);
-}
-
-const findParksHeaders = async (req, res) => {
-  const parks = await usersDao.findParksHeaders();
-  res.json(parks);
-}
 
 export default UserController
