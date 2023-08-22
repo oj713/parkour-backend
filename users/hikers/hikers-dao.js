@@ -1,5 +1,4 @@
-import hikersModel from "./hikers-model";
-import hikersStarter from "./hikers-starter";
+import hikersModel from "./hikers-model.js";
 
 export const findHikerById = (id) =>
     hikersModel.findById(id);
@@ -25,5 +24,3 @@ export const deleteHiker = (id) =>
 export const deleteAllHikers = () =>
     hikersModel.deleteMany({})
 
-export const addStarterHikers = () => 
-    hikersModel.insertMany(hikersStarter);

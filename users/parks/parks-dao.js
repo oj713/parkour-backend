@@ -1,4 +1,4 @@
-import parksModel from './parks/parks-model.js';
+import parksModel from './parks-model.js';
 
 export const findAllParks = () =>
     parksModel.find();

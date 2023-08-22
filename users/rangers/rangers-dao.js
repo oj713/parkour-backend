@@ -1,5 +1,4 @@
-import rangersModel from './rangers/rangers-model.js';
-import rangersStarter from './rangers-starter.js'
+import rangersModel from './rangers-model.js';
 
 export const findAllRangers = () => 
     rangersModel.find();
@@ -34,5 +33,3 @@ export const deleteRanger = (id) =>
 export const deleteAllRangers = () =>
     rangersModel.deleteMany({})
 
-export const addStarterRangers = () => 
-    rangersModel.insertMany(rangersStarter);
