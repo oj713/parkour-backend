@@ -7,12 +7,12 @@ const parksSchema = new mongoose.Schema({
   password: { type: String, required: true },
   displayName: String,
   profileImage: String,
-  backgroundImage: String,
   profileBio: String,
-  role: {
-    type: String,
-    default: 'park'
-  },
-  followers: [String]
+  // unique to Parks
+  blockedTerms: [String],
+  followers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'hikers'
+  }]
 }, { collection: "parks" });
 export default parksSchema;

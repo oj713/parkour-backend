@@ -9,15 +9,18 @@ const rangersSchema = new mongoose.Schema({
   profileImage: String,
   backgroundImage: String,
   profileBio: String,
-  role: {
-    type: String,
-    default: 'ranger'
-  },
+  // ParkId is unique to rangers
   parkId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'parks'
   },
-  followers: [String],
-  following: [String]
+  likedPosts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'posts'
+  }], 
+  followers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'hikers'
+  }]
 }, { collection: "rangers" });
 export default rangersSchema;

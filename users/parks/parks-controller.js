@@ -6,7 +6,7 @@ const ParksController = (app) => {
   app.post('/api/parks', createPark);
   app.delete('/api/parks/:id', deletePark);
   app.put('/api/parks/:id', updatePark);
-  app.get('/api/parks/rest', resetParks);
+  app.get('/api/parks/reset', resetParks);
   app.get('/api/parks/headers', findParksHeaders);
 }
 

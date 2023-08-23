@@ -8,11 +8,13 @@ import {ObjectId} from 'mongodb';
 
 export default [
 {
-    "userId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1a3"),
-    "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1a1"),
+    "userId": {
+        type: "rangers",
+        item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1a3")},
+    "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1a4"),
     "text": "Sed egestas feugiat massa id pellentesque.",
     "datePosted": "1997-07-12T12:00:00.000Z",
-    "likes": [new ObjectId("60f7b0b9e3b3a0b3a4f9e1a2"), new ObjectId("60f7b0b9e3b3a0b3a4f9e1a1"), new ObjectId("60f7b0b9e3b3a0b3a4f9e1a3"), new ObjectId("60f7b0b9e3b3a0b3a4f9e1a4")],
+    "likes": [],
     "likedByPark": true
 },
 {

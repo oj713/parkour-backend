@@ -9,11 +9,24 @@ const hikersSchema = new mongoose.Schema({
   profileImage: String,
   backgroundImage: String,
   profileBio: String,
-  role: {
-    type: String,
-    default: 'hiker'
-  },
-  followers: [String],
-  following: [String]
+  likedPosts: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'posts'
+  }],
+  followers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'hikers'
+  }],
+  // unique to hikers
+  following: [{
+    type: {
+      type: String,
+      enum: ['parks', 'rangers', 'hikers']
+    },
+    item: {
+      type: mongoose.Schema.Types.ObjectId,
+      refPath: 'following.type'
+    }
+  }]
 }, { collection: "hikers" });
 export default hikersSchema;
