@@ -54,3 +54,16 @@ export const findUserByDisplayName = async (displayName) => {
     const rangers = await rangersModel.find({ displayName });
     return [...parks, ...hikers, ...rangers];
 }
+
+export const createUser = (user) => {
+    switch (user.role) {
+        case 'park':
+            return parksModel.create(user);
+        case 'hiker':
+            return hikersModel.create(user);
+        case 'ranger':
+            return rangersModel.create(user);
+        default:
+            return null;
+    }
+}

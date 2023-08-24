@@ -12,35 +12,35 @@ const findUserById = async (req, res) => {
 };
 
 const findAllUsers = async (req, res) => {
-  const username = req.query.username;
-  const password = req.query.password;
-  const displayName = req.query.displayName;
-  if (username && password) {
-    const user = await usersDao.findUserByCredentials(username, password);
-    if (user) {
-      res.json(user);
-    } else {
-      res.sendStatus(404);
+    const username = req.query.username;
+    const password = req.query.password;
+    const displayName = req.query.displayName;
+    if (username && password) {
+      const user = await usersDao.findUserByCredentials(username, password);
+      if (user) {
+        res.json(user);
+      } else {
+        res.sendStatus(404);
+      }
+    } else if (username) {
+      const user = await usersDao.findUserByUsername(username);
+      if (user) {
+        res.json(user);
+      } else {
+        res.sendStatus(404);
+      }
     }
-  } else if (username) {
-    const user = await usersDao.findUserByUsername(username);
-    if (user) {
-      res.json(user);
+    else if (displayName) {
+      const user = await usersDao.findUserByDisplayName(displayName);
+      if (user) {
+        res.json(user);
+      } else {
+        res.sendStatus(404);
+      }
     } else {
-      res.sendStatus(404);
+      const users = await usersDao.findAllUsers();
+      res.json(users);
     }
-  }
-  else if (displayName) {
-    const user = await usersDao.findUserByDisplayName(displayName);
-    if (user) {
-      res.json(user);
-    } else {
-      res.sendStatus(404);
-    }
-  } else {
-    const users = await usersDao.findAllUsers();
-    res.json(users);
-  }
-};
-
-export default UsersController
+}
+  
+  export default UsersController

@@ -37,12 +37,13 @@ const register = async (req, res) => {
 }
 
 const profile = (req, res) => {
-    const currentUser = req.session["currentUser"]
-    if (!currentUser) {
-        res.sendStatus(404)
-        return
-    }
-    res.json(currentUser)
+
+        const currentUser = req.session["currentUser"]
+        if (!currentUser) {
+            res.sendStatus(404)
+            return
+        }
+        res.json(currentUser)
 }
 const logout = (req, res) => {
     req.session.destroy()
