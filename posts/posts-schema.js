@@ -1,16 +1,9 @@
 import mongoose from "mongoose";
 const postsSchema = new mongoose.Schema({
-    userId: {
-        type: {
-            type: String,
-            enum: ['rangers', 'hikers']
-        },
-        item: {
-            type: mongoose.Schema.Types.ObjectId,
-            refPath: 'userId.type'
-        },
-        required:true
-    },
+    userId: {type: {
+        userId: {type: String, enum: ['rangers', 'hikers'], required:true},
+        item: {type: mongoose.Schema.Types.ObjectId, ref: 'userId.type', required:true},
+    }, required: true},
     parkId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'parks'
