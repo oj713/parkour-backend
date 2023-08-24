@@ -19,13 +19,13 @@ const hikersSchema = new mongoose.Schema({
   }],
   // unique to hikers
   following: [{
-    type: {
+    role: {
       type: String,
       enum: ['parks', 'rangers', 'hikers']
     },
     item: {
       type: mongoose.Schema.Types.ObjectId,
-      refPath: 'following.type'
+      refPath: 'following.role'
     }
   }]
 }, { collection: "hikers" });

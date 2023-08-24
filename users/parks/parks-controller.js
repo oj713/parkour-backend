@@ -6,7 +6,7 @@ const ParksController = (app) => {
   app.post('/api/parks', createPark);
   app.delete('/api/parks/:id', deletePark);
   app.put('/api/parks/:id', updatePark);
-  app.get('/api/parks/reset', resetParks);
+  app.get('/api/parksreset', resetParksWrapper);
   app.get('/api/parks/headers', findParksHeaders);
 }
 
@@ -67,10 +67,15 @@ const findAllParks = async (req, res) => {
   }
 };
 
-const resetParks = async (req, res) => {
+const resetParksWrapper = async (req, res) => {
+  const status = await resetParks(req, res);
+  res.sendStatus(status);
+}
+
+export const resetParks = async (req, res) => {
   const status = await parksDao.deleteAllParks();
   const status2 = await parksDao.addStarterParks();
-  res.sendStatus(200);
+  return 200;
 }
 
 const findParksHeaders = async (req, res) => {

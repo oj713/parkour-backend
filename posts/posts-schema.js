@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 const postsSchema = new mongoose.Schema({
     userId: {type: {
-        userId: {type: String, enum: ['rangers', 'hikers'], required:true},
-        item: {type: mongoose.Schema.Types.ObjectId, ref: 'userId.type', required:true},
+        role: {type: String, enum: ['rangers', 'hikers'], required:true},
+        item: {type: mongoose.Schema.Types.ObjectId, ref: 'userId.role', required:true},
     }, required: true},
     parkId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -13,7 +13,7 @@ const postsSchema = new mongoose.Schema({
     location: String,
     attachment: String,
     likes: [{
-        type: {
+        role: {
             type: String, 
             enum: ['rangers', 'hikers']
         },

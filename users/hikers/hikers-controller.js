@@ -6,7 +6,7 @@ const hikersController = (app) => {
   app.post('/api/hikers', createHiker);
   app.delete('/api/hikers/:id', deleteHiker);
   app.put('/api/hikers/:id', updateHiker);
-  app.get('/api/hikers/reset', resetHikers);
+  app.get('/api/hikersreset', resetHikersWrapper);
 }
 
 const createHiker = async (req, res) => {
@@ -66,10 +66,15 @@ const findAllHikers = async (req, res) => {
   }
 };
 
-const resetHikers = async (req, res) => {
+const resetHikersWrapper = async (req, res) => {
+  const status = await resetHikers(req, res);
+  res.sendStatus(status);
+}
+
+export const resetHikers = async (req, res) => {
   const status = await hikersDao.deleteAllHikers();
   const status2 = await hikersDao.addStarterHikers();
-  res.sendStatus(200);
+  return 200;
 }
 
 export default hikersController

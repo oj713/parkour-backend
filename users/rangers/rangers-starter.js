@@ -24,7 +24,10 @@ export default [
         "backgroundImage": "https://www.nps.gov/glac/planyourvisit/images/smhikeranger.jpg?maxwidth=1300&maxheight=1300&autorotate=false",
         "profileBio": "Ranger at Glacier National Park!",
         "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1a5"),
-        "likedPosts": [],
+        "likedPosts": [
+            new ObjectId("60f7b0b9e3b3a0b3a4f9e1c5"),
+            new ObjectId("60f7b0b9e3b3a0b3a4f9e1c6")
+        ],
         "followers": [
             new ObjectId("60f7b0b9e3b3a0b3a4f9e1a9"),
             new ObjectId("60f7b0b9e3b3a0b3a4f9e1b0")
@@ -39,7 +42,9 @@ export default [
         "backgroundImage": "https://i.natgeofe.com/n/fa698067-053a-4c40-a22e-905bf3ee8998/lake-grinnell-glacier-many-590_3x2.jpg",
         "profileBio": "Another ranger at Glacier National Park.",
         "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1a5"),
-        "likedPosts": [],
+        "likedPosts": [
+            new ObjectId("60f7b0b9e3b3a0b3a4f9e1c5")
+        ],
         "followers": [
             new ObjectId("60f7b0b9e3b3a0b3a4f9e1a9")
         ]

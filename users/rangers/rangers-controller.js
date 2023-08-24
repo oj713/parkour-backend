@@ -7,7 +7,7 @@ const RangersController = (app) => {
   app.post('/api/rangers', createRanger);
   app.delete('/api/rangers/:id', deleteRanger);
   app.put('/api/rangers/:id', updateRanger);
-  app.get('/api/rangers/reset', resetRangers);
+  app.get('/api/rangersreset', resetRangersWrapper);
 }
 
 
@@ -83,10 +83,15 @@ const findAllRangers = async (req, res) => {
   }
 };
 
-const resetRangers = async (req, res) => {
+const resetRangersWrapper = async (req, res) => {
+  const status = await resetRangers(req, res);
+  res.sendStatus(status);
+}
+
+export const resetRangers = async (req, res) => {
   const status = await rangersDao.deleteAllRangers();
   const status2 = await rangersDao.addStarterRangers();
-  res.sendStatus(200);
+  return 200;
 }
 
 export default RangersController

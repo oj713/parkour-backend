@@ -6,7 +6,7 @@ const PostsController = (app) => {
     app.post('/api/posts', createPost);
     app.delete('/api/posts/:id', deletePost);
     app.put('/api/posts/:id', updatePost);
-    app.get('/api/postsreset', resetPosts);
+    app.get('/api/postsreset', resetPostsWrapper);
 }
 
 const createPost = async (req, res) => {
@@ -48,10 +48,15 @@ const findAllPosts = async (req, res) => {
     }
 };
 
-const resetPosts = async (req, res) => {
+const resetPostsWrapper = async (req, res) => {
+  const status = await resetPosts(req, res);
+  res.sendStatus(status);
+}
+
+export const resetPosts = async (req, res) => {
   const status = await postsDao.deleteAllPosts();
   const status2 = await postsDao.addStarterPosts();
-  res.sendStatus(200);
+  return 200;
 };
 
 export default PostsController;

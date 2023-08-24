@@ -35,8 +35,13 @@ Dixon: b0
 ## POSTS
 
 c1 - by Yosemite Ranger at Yosemite
+    L: Charlie, Dixon
 c2 - by Alice at Yosemite
 c3 - by Bob at Grand Teton
+    L: Yosemite Ranger, Dixon
 c4 - by Alice at Acadia
+    L: Bob
 c5 - by Dixon at Glacier
+    L: GR1, GR2
 c6 - by Glacier Ranger 2 at Glacier
+    L: GR1, Dixon
