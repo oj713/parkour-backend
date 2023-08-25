@@ -12,7 +12,7 @@ export const findPostsByParkId = (parkId) =>
     postsModel.find({parkId: parkId})
 
 export const findPostsByUserId = (userId) =>
-    postsModel.find({userId: userId})
+    postsModel.find({'userId.item': userId})
 
 export const createPost = (post) =>
     postsModel.create(post);

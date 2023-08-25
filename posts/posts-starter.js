@@ -34,10 +34,7 @@ export default [
     "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1a4"),
     "text": "Sed egestas feugiat massa id pellentesque.",
     "datePosted": "1997-07-12T12:00:00.000Z",
-    "likes": [
-        {role: 'hikers', item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1a9")},
-        {role: 'hikers', item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1b0")}
-    ],
+    "likes": 2,
     "numRangerLikes": 0
 },
 {   "_id": "60f7b0b9e3b3a0b3a4f9e1c2",
@@ -48,7 +45,7 @@ export default [
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas feugiat massa id pellentesque. Nulla semper neque id urna hendrerit, sit amet luctus eros vehicula.",
     "datePosted": "2021-03-01T00:00:00.000Z",
     "location": "Higher Ridge Trail",
-    "likes": [],
+    "likes": 0,
     "numRangerLikes": 0
 },
 {   "_id": "60f7b0b9e3b3a0b3a4f9e1c3",
@@ -60,10 +57,7 @@ export default [
     "datePosted": "2021-07-21T12:00:00.000Z",
     "location": "Bison Field 2",
     "attachment": "https://www.rmrentals.com/sites/default/files/uploads/summer-sunset-at-snake-river-overlook-web.jpg",
-    "likes": [
-        {role: 'hikers', item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1b0")},
-        {role: 'rangers', item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1a3")}
-    ],
+    "likes": 2,
     "numRangerLikes": 0
 }, 
 {   "_id": "60f7b0b9e3b3a0b3a4f9e1c4",
@@ -75,7 +69,7 @@ export default [
     "datePosted": "2023-07-12T12:00:00.000Z",
     "location": "Another Trail Name",
     "attachment": "https://www.visittheusa.com/sites/default/files/styles/16_9_1280x720/public/2016-10/Grand%20Teton.jpg?h=97b787f8&itok=L1wws49q",
-    "likes": [{role: 'hikers', item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1a8")}],
+    "likes": 2,
     "numRangerLikes": 0
 },
 {   "_id": "60f7b0b9e3b3a0b3a4f9e1c5",
@@ -85,9 +79,7 @@ export default [
     "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1b1"),
     "text": "Lorem ipsum dolor sit amet.",
     "datePosted": "2023-07-31T00:00:00.000Z",
-    "likes": [
-        {role: 'rangers', item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1a6")},
-        {role: 'rangers', item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1a7")},],
+    "likes": 2,
     "numRangerLikes": 2
 },
 {   "_id": "60f7b0b9e3b3a0b3a4f9e1c6",
@@ -98,10 +90,7 @@ export default [
     "text":  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed egestas feugiat massa id pellentesque. Nulla semper neque id urna hendrerit, sit amet luctus eros vehicula.",
     "datePosted": "2023-08-14T12:00:00.000Z",
     "location": "High Ridge Trail",
-    "likes": [
-        {role: 'rangers', item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1a6")},
-        {role: 'hikers', item: new ObjectId("60f7b0b9e3b3a0b3a4f9e1b0")},
-    ], 
+    "likes": 2, 
     "numRangerLikes": 1
 }
 ]

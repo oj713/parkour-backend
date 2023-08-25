@@ -32,4 +32,4 @@ export const addStarterParks = () =>
     parksModel.insertMany(parksStarter);
 
 export const findParksHeaders = () => 
-    parksModel.find({role: 'park'}, {displayName: 1, profileImage: 1, username: 1})
+    parksModel.find({}, {displayName: 1, profileImage: 1, username: 1})
