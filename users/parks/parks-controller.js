@@ -7,7 +7,7 @@ const ParksController = (app) => {
   app.delete('/api/parks/:id', deletePark);
   app.put('/api/parks/:id', updatePark);
   app.get('/api/parksreset', resetParksWrapper);
-  app.get('/api/parks/headers', findParksHeaders);
+  app.get('/api/parksheaders', findParksHeaders);
 }
 
 const createPark = async (req, res) => {

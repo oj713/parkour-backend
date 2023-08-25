@@ -23,7 +23,7 @@ export default [
         "profileImage": "https://www.nps.gov/glac/getinvolved/images/jobs1.jpg?maxwidth=1300&maxheight=1300&autorotate=false",
         "backgroundImage": "https://www.nps.gov/glac/planyourvisit/images/smhikeranger.jpg?maxwidth=1300&maxheight=1300&autorotate=false",
         "profileBio": "Ranger at Glacier National Park!",
-        "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1a5"),
+        "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1b1"),
         "likedPosts": [
             new ObjectId("60f7b0b9e3b3a0b3a4f9e1c5"),
             new ObjectId("60f7b0b9e3b3a0b3a4f9e1c6")
@@ -41,7 +41,7 @@ export default [
         "profileImage": "https://flatheadbeacon.com/wp-content/uploads/2020/12/20201218_GLACIER_POD_002.jpg",
         "backgroundImage": "https://i.natgeofe.com/n/fa698067-053a-4c40-a22e-905bf3ee8998/lake-grinnell-glacier-many-590_3x2.jpg",
         "profileBio": "Another ranger at Glacier National Park.",
-        "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1a5"),
+        "parkId": new ObjectId("60f7b0b9e3b3a0b3a4f9e1b1"),
         "likedPosts": [
             new ObjectId("60f7b0b9e3b3a0b3a4f9e1c5")
         ],
