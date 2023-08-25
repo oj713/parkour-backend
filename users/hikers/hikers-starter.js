@@ -7,7 +7,6 @@ export default [
         "password": "123",
         "displayName": "Alice",
         "profileImage": "https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3360859.jpg",
-        "backgroundImage": null,
         "profileBio": "Hiker that loves parks, mountains, and Acadia!",
         "likedPosts": [],
         "followers": [
@@ -75,11 +74,10 @@ export default [
             
     },
     {
-        "_id": new ObjectId("60f7b0b9e3b3a0b3a4f9e110"),
+        "_id": new ObjectId("60f7b0b9e3b3a0b3a4f9e1b0"),
         "username": "hikerDixon",
         "password": "123",
         "displayName": "Dixon",
-        "profileImage": null,
         "backgroundImage": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Gentau_Pic_du_Midi_Ossau.jpg",
         "profileBio": "I like to hike",
         "likedPosts": [

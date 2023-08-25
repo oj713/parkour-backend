@@ -7,8 +7,10 @@ const hikersSchema = new mongoose.Schema({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   displayName: String,
-  profileImage: String,
-  backgroundImage: String,
+  profileImage: {type: String, 
+    default: "https://media.istockphoto.com/id/174667789/photo/shoe-boot-footprint-desert-soil-hiking-athlete.jpg?s=612x612&w=0&k=20&c=dmFJ3ND2jnTQOH6utcxzwf8nmje46z_tFGGYY_9Kz_A="},
+  backgroundImage: {type: String, 
+    default: "https://media.cntraveler.com/photos/5eb18e42fc043ed5d9779733/16:9/w_4288,h_2412,c_limit/BlackForest-Germany-GettyImages-147180370.jpg"},
   profileBio: String,
   likedPosts: [{
     type: mongoose.Schema.Types.ObjectId,
