@@ -29,7 +29,7 @@ export default [{
         "username": "acadia",
         "password": "123",
         "displayName": "Acadia",
-        "profileImage": "https://www.tripsavvy.com/thmb/ECFd94rk6lPS3r56Z3_PXUxlYvE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/gorham-mountain-151102298-d358536a1706435e9bedf494902dbe28.jpg",
+        "profileImage": "https://i0.wp.com/www.thefatgirlhiking.com/wp-content/uploads/2022/07/Ocena-Path-Cliffs.jpg?fit=1024%2C1024&ssl=1",
         "profileBio": "Maine park with rocky beaches, granite peaks, forests, lakes & wildlife.",
         "blockedTerms": [],
         "followers": [
