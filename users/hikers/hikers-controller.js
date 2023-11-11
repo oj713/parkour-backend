@@ -24,7 +24,7 @@ const updateHiker = async (req, res) => {
   const id = req.params.id;
   const status = await hikersDao.updateHiker(id, req.body);
   const hiker = await hikersDao.findHikerById(id);
-  req.session["currentHiker"] = hiker;
+  req.session["currentUser"] = hiker;
   res.json(status);
 };
 
