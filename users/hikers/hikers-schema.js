@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const hikersSchema = new mongoose.Schema({
-  _id: { type: Schema.Types.ObjectId },
+  //_id: { type: Schema.Types.ObjectId },
   role: { type: String, enum: ['hikers'], default: 'hikers'},
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },

@@ -1,6 +1,7 @@
 import parksModel from './parks/parks-model.js';
 import hikersModel from './hikers/hikers-model.js';
 import rangersModel from './rangers/rangers-model.js';
+import mongoose from "mongoose";
 
 export const findAllUsers = async () => {
     const parks =  await parksModel.find();
@@ -57,13 +58,13 @@ export const findUserByDisplayName = async (displayName) => {
 
 export const createUser = (user) => {
     switch (user.role) {
-        case 'park':
+        case 'parks':
             return parksModel.create(user);
-        case 'hiker':
+        case 'hikers':
             return hikersModel.create(user);
-        case 'ranger':
+        case 'rangers':
             return rangersModel.create(user);
         default:
-            return null;
+            throw new Error('Invalid user role');
     }
 }
